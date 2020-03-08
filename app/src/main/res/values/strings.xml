@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="trip_vault">Trip Vault</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="log_in">Log In</string>
+    <string name="user_agreement">User Agreement</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="user_location">Ottawa, ON</string>
+    <string name="create_account">Create Account</string>
+    <string name="cancel">Cancel</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="photos">Photos</string>
+    <string name="trips">Trips</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="delete_profile">Delete Profile</string>
+</resources>

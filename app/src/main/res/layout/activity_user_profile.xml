@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fontFamily="@font/poppins_regular"
+    android:orientation="vertical"
+    android:clipToPadding="false"
+    android:background="@drawable/profilebg"
+    tools:context=".userProfile">
+
+    <TextView
+        android:id="@+id/App_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/authem"
+        android:padding="50dp"
+        android:text="@string/trip_vault"
+        android:textAlignment="center"
+        android:textColor="@color/my_app_primary_variant_color"
+        android:textSize="52sp" />
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/my_app_color_on_surface"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp">
+
+        <!-- Card contents. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="322dp"
+                android:contentDescription="@string/profile_picture"
+                android:scaleType="centerCrop"
+                android:src="@drawable/newimag" />
+
+            <TextView
+                android:id="@+id/welcomeInfos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/my_app_primary_variant_color"
+                android:textSize="23sp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:elevation="3dp"
+                    android:src="@drawable/location"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/userlocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_italic"
+                    android:hint="@string/user_location"
+                    android:textColorHint="@color/my_app_primary_variant_color"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <TextView
+                    android:id="@+id/photos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/photos"
+                    android:textColorHint="@color/my_app_primary_variant_color"
+
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/trips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/trips"
+                    android:paddingStart="10dp"
+                    android:textAlignment="textEnd"
+                    android:textColorHint="@color/my_app_primary_variant_color"
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <TextView
+                    android:id="@+id/savedPhotos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="322"
+                    android:textColorHint="@color/colorAccent2"
+                    android:textSize="23sp" />
+                <TextView
+                    android:id="@+id/savedTrips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="45"
+                    android:paddingStart="50dp"
+                    android:textAlignment="textEnd"
+                    android:textColorHint="@color/colorAccent2"
+                    android:textSize="23sp"
+                    tools:ignore="RtlSymmetry" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--    <com.google.android.material.card.MaterialCardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="374dp"-->
+    <!--        android:layout_marginTop="-70dp"-->
+    <!--        app:cardBackgroundColor="@android:color/white"-->
+    <!--        app:rippleColor="@color/colorPrimary"-->
+    <!--        app:strokeColor="@color/colorPrimary"-->
+    <!--        tools:ignore="MissingConstraints">-->
+
+
+
+
+    <!--    </com.google.android.material.card.MaterialCardView>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/editProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_profile"
+            android:textColor="@color/my_app_primary_variant_color"
+            app:strokeColor="@color/my_app_primary_variant_color"
+            android:layout_margin="10dp"
+
+            style="?attr/materialButtonOutlinedStyle"/>
+
+        <Button
+            android:id="@+id/delete_Profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_profile"
+            android:textColor="@color/my_app_primary_variant_color"
+            android:layout_margin="10dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+    </LinearLayout>
+
+</LinearLayout>
