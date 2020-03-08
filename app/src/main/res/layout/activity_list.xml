@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activityList">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="30dp"
+            android:tint="@android:color/white"
+            app:backgroundTint="@color/my_app_primary_variant_color"
+
+            app:borderWidth="0dp"
+            app:elevation="8dp"
+            app:fabSize="normal"
+            app:rippleColor="@android:color/secondary_text_light"
+            app:srcCompat="@drawable/add_icon"
+            tools:ignore="RtlHardcoded" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>
+
+

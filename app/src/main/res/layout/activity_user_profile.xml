@@ -7,6 +7,7 @@
     android:fontFamily="@font/poppins_regular"
     android:orientation="vertical"
     android:clipToPadding="false"
+    android:gravity="center"
     android:background="@drawable/profilebg"
     tools:context=".userProfile">
 
@@ -15,11 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/authem"
-        android:padding="50dp"
+        android:padding="25dp"
         android:text="@string/trip_vault"
         android:textAlignment="center"
         android:textColor="@color/my_app_primary_variant_color"
-        android:textSize="52sp" />
+        android:textSize="40sp" />
 
     <com.google.android.material.card.MaterialCardView
         style="@style/Widget.MaterialComponents.CardView"
@@ -41,7 +42,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="322dp"
+                android:layout_height="300dp"
                 android:contentDescription="@string/profile_picture"
                 android:scaleType="centerCrop"
                 android:src="@drawable/newimag" />
@@ -157,26 +158,37 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content">
+
         <Button
             android:id="@+id/editProfile"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:text="@string/edit_profile"
             android:textColor="@color/my_app_primary_variant_color"
-            app:strokeColor="@color/my_app_primary_variant_color"
-            android:layout_margin="10dp"
-
-            style="?attr/materialButtonOutlinedStyle"/>
-
+            app:strokeColor="@color/my_app_primary_variant_color" />
         <Button
-            android:id="@+id/delete_Profile"
+            android:id="@+id/go_to_page"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/delete_profile"
-            android:textColor="@color/my_app_primary_variant_color"
             android:layout_margin="10dp"
-            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            android:text="@string/go_to_page"
+            android:padding="10dp"
+            android:textColor="@color/my_app_primary_variant_color"
+            app:strokeColor="@color/my_app_primary_variant_color" />
+
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/delete_Profile"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="@string/delete_profile"
+        android:textColor="@color/my_app_primary_variant_color" />
 </LinearLayout>
