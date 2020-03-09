@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.Objects;
+
 public class userProfile extends AppCompatActivity {
 
     private TextView welcomeinfo;
@@ -26,7 +28,7 @@ public class userProfile extends AppCompatActivity {
         Intent intent = getIntent();
         String userName = intent.getStringExtra("name");
         welcomeinfo.setText(userName);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         goToPage.setOnClickListener(new View.OnClickListener() {
             @Override
