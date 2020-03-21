@@ -35,4 +35,5 @@
     <string name="image_picture">Image Picture</string>
     <string name="profile_UserName">Username </string>
     <string name="profile_name">Profile Name</string>
+    <string name="SignUpCity">City</string>
 </resources>

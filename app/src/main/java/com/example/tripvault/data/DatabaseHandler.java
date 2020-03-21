@@ -19,10 +19,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	}
 
+
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		String CREATE_CONTACT_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "(" + Util.KEY_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-				Util.KEY_USERNAME + Util.KEY_USER_PASSWD +" TEXT," + Util.KEY_EMAIL + "TEXT," +Util.KEY_CITY + " TEXT" +")";
+		String CREATE_CONTACT_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "(" + Util.KEY_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+				Util.KEY_USERNAME  +" TEXT, " + Util.KEY_USER_PASSWD +" TEXT," + Util.KEY_EMAIL + " TEXT, " +Util.KEY_CITY + " TEXT, " + Util.KEY_PHONE + " TEXT " +")";
 
 		db.execSQL(CREATE_CONTACT_TABLE);
 
@@ -36,15 +37,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	}
 
-	// takes in a contact of Contact class
+
+		// takes in a contact of Contact class
 	public void addContact(Contact contact) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues contentValues = new ContentValues();
-		contentValues.put(Util.KEY_USERNAME,contact.getUserName());
+ 		contentValues.put(Util.KEY_USERNAME, contact.getUserName());
 		contentValues.put(Util.KEY_USER_PASSWD,contact.getPassword());
 		contentValues.put(Util.KEY_EMAIL, contact.getEmailAddress());
 		contentValues.put(Util.KEY_CITY,contact.getCity());
+		contentValues.put(Util.KEY_PHONE,contact.getPhone_num());
+
+
 		db.insert(Util.TABLE_NAME,null,contentValues);
 		Log.i("Added","addContact: Item Added");
 		db.close();
@@ -70,6 +75,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		contentValues.put(Util.KEY_USERNAME,contact.getUserName());
 		contentValues.put(Util.KEY_EMAIL,contact.getEmailAddress());
 		contentValues.put(Util.KEY_CITY,contact.getCity());
+		contentValues.put(Util.KEY_PHONE,contact.getPhone_num());
 		db.update(Util.TABLE_NAME, contentValues, Util.KEY_USER_ID + "=?",new String[]{
 				String.valueOf(contact.getUserId())} );
 		Log.i("Added","addContact: Updated Added");
@@ -78,7 +84,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	}
 	public Contact getContact(int id) {
 		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor cursor = db.query(Util.TABLE_NAME,new String[]{Util.KEY_USER_ID,Util.KEY_USERNAME, Util.KEY_USER_PASSWD, Util.KEY_EMAIL, Util.KEY_CITY},
+		Cursor cursor = db.query(Util.TABLE_NAME,new String[]{Util.KEY_USER_ID,Util.KEY_USERNAME, Util.KEY_USER_PASSWD, Util.KEY_EMAIL, Util.KEY_CITY, Util.KEY_PHONE},
 				Util.KEY_USER_ID + "=?",new String[]{String.valueOf(id)},null,null,null);
 		if (cursor != null)
 			cursor.moveToFirst();
@@ -87,7 +93,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		contact.setUserId(Integer.parseInt(cursor.getString(0)));
 		contact.setUserName(cursor.getString(1));
 		contact.setCity(cursor.getString(2));
-		contact.setEmailAddress(cursor.getString(2));
+		contact.setEmailAddress(cursor.getString(4));
+		contact.setPhone_num(cursor.getString(5));
 
 		return contact;
 	}
@@ -100,9 +107,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 			do {
 				Contact contact = new Contact();
 				contact.setUserId(Integer.parseInt(cursor.getString(0)));
-				contact.setUserName((cursor.getString(1)));
-				contact.setEmailAddress(cursor.getString(3));
-				contact.setCity(cursor.getString(4));
+				contact.setUserName(cursor.getString(1));
+				contact.setCity(cursor.getString(2));
+				contact.setEmailAddress(cursor.getString(4));
+				contact.setPhone_num(cursor.getString(5));
 				contactList.add(contact);
 
 			} while (cursor.moveToNext());
