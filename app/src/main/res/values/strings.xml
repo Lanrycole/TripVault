@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App</string>
+    <string name="app_name">"Trip Vault"</string>
     <string name="trip_vault">Trip Vault</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_password">Enter Password</string>
@@ -18,4 +18,21 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="delete_profile">Delete Profile</string>
     <string name="go_to_page">Go to Page</string>
+    <string name="oh_no_nothing_is_here">Oh no! Nothing is Here</string>
+    <string name="search">Search</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">close</string>
+    <string name="profile_tittle">Profile</string>
+    <string name="dashboard">DashBoard</string>
+    <string name="photos_title">Photos</string>
+    <string name="recent_trips">Recent Trips</string>
+    <string name="locations">Locations</string>
+    <string name="share">Share</string>
+    <string name="settings">Settings</string>
+    <string name="edit_account">Edit Account</string>
+    <string name="log_out">Log Out</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="image_picture">Image Picture</string>
+    <string name="profile_UserName">Username </string>
+    <string name="profile_name">Profile Name</string>
 </resources>

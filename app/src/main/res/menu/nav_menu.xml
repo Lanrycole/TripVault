@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/profile_tittle">
+        <menu>
+            <item
+                android:id="@+id/Item_dashboard"
+                android:title="@string/dashboard"
+                 android:icon="@drawable/baseline_dashboard_black_18dp">
+            </item>
+            <item
+                android:id="@+id/Item_photos"
+                android:title="@string/photos_title"
+                 android:icon="@drawable/baseline_crop_original_black_18dp">
+            </item>
+            <item
+                android:id="@+id/Item_recent_trips"
+                android:title="@string/recent_trips"
+                 android:icon="@drawable/baseline_card_travel_black_18dp">
+            </item>
+            <item
+                android:id="@+id/Item_cities"
+                android:title="@string/locations"
+                 android:icon="@drawable/baseline_location_city_black_18dp">
+            </item>
+            <item
+                android:id="@+id/Item_share"
+                android:title="@string/share"
+                 android:icon="@drawable/baseline_share_black_18dp">
+            </item>
+
+
+        </menu>
+
+    </item>
+    <item
+        android:title="@string/settings">
+        <menu>
+            <item
+                android:id="@+id/Item_editAccount"
+                android:title="@string/edit_account">
+            </item>
+            <item
+                android:id="@+id/Item_change_password"
+                android:title="Change Password">
+            </item>
+            <item
+                android:id="@+id/Item_log_out"
+                android:title="@string/log_out">
+            </item>
+            <item
+                android:id="@+id/Item_delete_Profile"
+                 android:title="@string/delete_account">
+            </item>
+
+        </menu>
+    </item>
+</menu>

@@ -1,10 +1,12 @@
-package com.example.tripvault;
+package com.example.tripvault.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.tripvault.R;
 
 public class createAcc extends AppCompatActivity {
     Button signUpCancel;

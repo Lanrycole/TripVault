@@ -4,12 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activityList">
+    tools:context=".activityList"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_margin="12dp"
+        android:layout_height="wrap_content">
+
+        <SearchView
+            android:id="@+id/SearchVault"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search Trip" />
+
+        <Button
+            android:id="@+id/searchEnter"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/my_app_surface_color"
+            android:text="@string/search"
+
+            android:textColor="@color/my_app_primary_variant_color"
+            app:cornerRadius="8dp"
+            app:strokeColor="@color/my_app_primary_variant_color" />
+
+
+    </LinearLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end">
+        android:layout_gravity="bottom|end"
+        android:layout_weight="1">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floating_action_button"
@@ -19,13 +50,23 @@
             android:layout_margin="30dp"
             android:tint="@android:color/white"
             app:backgroundTint="@color/my_app_primary_variant_color"
-
             app:borderWidth="0dp"
             app:elevation="8dp"
             app:fabSize="normal"
             app:rippleColor="@android:color/secondary_text_light"
             app:srcCompat="@drawable/add_icon"
             tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/oh_no_nothing_is_here"
+            android:padding="20dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/my_app_color_on_background"
+            android:textSize="30sp" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

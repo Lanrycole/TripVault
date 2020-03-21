@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/profile_tittle">
+        <menu>
+            <item
+                android:id="@+id/Item_dashboard"
+                android:title="@string/dashboard"
+                android:iconTint="@color/my_app_color_on_background"
+                android:icon="@drawable/baseline_dashboard_black_18dp">
+            </item>
+            <item
+                android:id="@+id/Item_photos"
+                android:title="Photos"
+                android:iconTint="@color/my_app_color_on_background"
+                android:icon="@drawable/baseline_crop_original_black_18dp">
+            </item>
+            <item
+                android:id="@+id/Item_recent_trips"
+                android:title="Recent Trips"
+                android:iconTint="@color/my_app_color_on_background"
+                android:icon="@drawable/baseline_card_travel_black_18dp">
+            </item>
+            <item
+                android:id="@+id/Item_cities"
+                android:title="Locations"
+                android:iconTint="@color/my_app_color_on_background"
+                android:icon="@drawable/baseline_location_city_black_18dp">
+            </item>
+            <item
+                android:id="@+id/Item_share"
+                android:title="Share"
+                android:iconTint="@color/my_app_color_on_background"
+                android:icon="@drawable/baseline_share_black_18dp">
+            </item>
+
+
+        </menu>
+
+    </item>
+    <item
+        android:title="Settings ">
+        <menu>
+            <item
+                android:id="@+id/Item_editAccount"
+                android:title="Edit Account"
+                android:iconTint="@color/my_app_color_on_background">
+            </item>
+            <item
+                android:id="@+id/Item_log_out"
+                android:title="Log Out"
+                 android:iconTint="@color/my_app_color_on_background">
+            </item>
+            <item
+                android:id="@+id/Item_delete_Profile"
+                 android:iconTint="@color/my_app_color_on_background"
+                android:title="Delete Account">
+            </item>
+
+        </menu>
+    </item>
+</menu>

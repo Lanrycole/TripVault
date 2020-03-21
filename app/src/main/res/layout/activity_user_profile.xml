@@ -9,7 +9,7 @@
     android:clipToPadding="false"
     android:gravity="center"
     android:background="@drawable/profilebg"
-    tools:context=".userProfile">
+    tools:context=".UI.userProfile">
 
     <TextView
         android:id="@+id/App_Name"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         app:cardBackgroundColor="@color/my_app_color_on_surface"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp">
@@ -38,15 +38,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-
             android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="300dp"
+                android:layout_height="200dp"
                 android:contentDescription="@string/profile_picture"
-                android:scaleType="centerCrop"
-                android:src="@drawable/tour" />
+                android:scaleType="centerCrop"   />
+<!--                android:src="@drawable/tour"-->
+
 
             <TextView
                 android:id="@+id/welcomeInfos"
@@ -141,6 +141,7 @@
                     android:textSize="23sp"
                     tools:ignore="RtlSymmetry" />
             </LinearLayout>
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -168,8 +169,8 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-
+            android:padding="10dp"
+            android:layout_margin="10sp"
             android:text="@string/edit_profile"
             android:textColor="@color/my_app_primary_variant_color"
             app:strokeColor="@color/my_app_primary_variant_color" />
@@ -178,9 +179,9 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="10sp"
             android:text="@string/go_to_page"
-            android:padding="20dp"
+            android:padding="10dp"
             android:textColor="@color/my_app_primary_variant_color"
             app:strokeColor="@color/my_app_primary_variant_color" />
 
@@ -192,8 +193,8 @@
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="20dp"
+        android:layout_margin="10sp"
+        android:padding="10dp"
         android:text="@string/delete_profile"
         android:textColor="@color/my_app_primary_variant_color" />
 </LinearLayout>

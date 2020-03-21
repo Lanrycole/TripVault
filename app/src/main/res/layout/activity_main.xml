@@ -52,8 +52,7 @@
                 android:drawablePadding="2dp"
                 android:hint="@string/enter_username"
                 android:padding="10dp"
-                app:cornerRadius="8dp"
-                />
+                app:cornerRadius="8dp"/>
 
 
             <EditText
