@@ -17,6 +17,8 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
     Button signUpCancel;
     EditText signUsername;
 	EditText signUpPasswd;
+	EditText confirmPasswd;
+
 	EditText signUpEmail;
 	EditText signUpAddress;
 	EditText signupPhoneNumber;
@@ -27,6 +29,7 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 	String email;
 	String address;
 	String phone_number;
+	String confirmPassword;
 
 
     @Override
@@ -43,16 +46,10 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 		signupPhoneNumber = findViewById(R.id.signUpUserPhoneNum);
 		signUpAddress = findViewById(R.id.signUpUserAdd);
 		signUpButton = findViewById(R.id.signUpButton);
+		confirmPasswd = findViewById(R.id.confirmsignUpPasswd);
 
 
 
-
-
-		signUsername.setOnClickListener(this);
-		signUpPasswd.setOnClickListener(this);
-		signUpEmail.setOnClickListener(this);
-		signUpAddress.setOnClickListener(this);
-		signupPhoneNumber.setOnClickListener(this);
 
         signUpCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,25 +67,34 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 			case R.id.signUpButton:
 
 				username = signUsername.getText().toString();
-				password = signUpPasswd.getText().toString();
 				email = signUpEmail.getText().toString();
+				password = signUpPasswd.getText().toString();
 				address = signUpAddress.getText().toString();
-				phone_number= signupPhoneNumber.getText().toString();
+				phone_number = signupPhoneNumber.getText().toString();
+				confirmPassword= confirmPasswd.getText().toString();
 
-				Contact contact = new Contact();
-//				contact.setUserId(1);
-				contact.setUserName(username);
-				contact.setPassword(password);
-				contact.setEmailAddress(email);
-				contact.setCity(address);
-				contact.setPhone_num(phone_number);
+				if (username.isEmpty() || email.isEmpty() || address.isEmpty()|| phone_number.isEmpty()||password.isEmpty() || confirmPassword.isEmpty()) {
+					Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_LONG).show();
+				}
+				else if(!password.equals(confirmPassword)){
+ 					Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_LONG).show();
+				}else {
+					Contact contact = new Contact();
+					contact.setUserName(username);
+					contact.setPassword(password);
+					contact.setEmailAddress(email);
+					contact.setCity(address);
+					contact.setPhone_num(phone_number);
 
-				Toast.makeText(getApplicationContext(), username, Toast.LENGTH_LONG).show();
 
-				DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
-				databaseHandler.addContact(contact);
+					DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
+//					databaseHandler.addContact(contact);
 
-				Log.i("ALL","onClick: "+databaseHandler.getAllContact());
+					Toast.makeText(getApplicationContext(), "Sign Up Successful", Toast.LENGTH_LONG).show();
+
+					databaseHandler.deleteAll();
+					Log.i("ALL","onClick: " +databaseHandler.getAllContact());
+				}
 				break;
 
 
@@ -96,4 +102,5 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 		}
 
 	}
+
 }

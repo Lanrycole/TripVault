@@ -6,6 +6,7 @@
     android:fontFamily="@font/poppins_regular"
     android:paddingLeft="26dp"
     android:paddingRight="26dp"
+    android:background="@drawable/profilebg"
     android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
@@ -25,6 +26,7 @@
         android:drawableStart = "@drawable/user2"
         android:drawablePadding="5dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/forms"
         android:padding="10dp"
         android:hint="@string/username"
         app:cornerRadius="8dp"
@@ -36,10 +38,23 @@
         android:drawablePadding="2dp"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:background="@drawable/forms"
+
         android:layout_marginTop="10dp"
         android:inputType="textPassword"
-
         android:hint="@string/password"
+        app:cornerRadius="8dp"/>
+    <EditText
+        android:id="@+id/confirmsignUpPasswd"
+        android:layout_width="match_parent"
+        android:drawablePadding="2dp"
+        android:background="@drawable/forms"
+
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:hint="@string/confirm_password"
         app:cornerRadius="8dp"/>
 
     <EditText
@@ -47,6 +62,8 @@
         android:layout_width="match_parent"
         android:drawableStart = "@drawable/email1"
         android:drawablePadding="5dp"
+        android:background="@drawable/forms"
+
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_marginTop="10dp"
@@ -60,6 +77,8 @@
         android:drawableStart = "@drawable/home"
         android:drawablePadding="5dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/forms"
+
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:hint="@string/SignUpCity"
@@ -78,6 +97,7 @@
 
         android:hint="@string/phone_number"
         android:autofillHints="Phone Number"
+        android:background="@drawable/forms"
 
         app:cornerRadius="8dp"/>
 

@@ -124,4 +124,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		return cursor.getCount();
 	}
 
+	public void deleteAll(){
+		String delete = "DELETE  FROM "+ Util.TABLE_NAME +"";
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.delete(Util.TABLE_NAME, null, null);
+
+	}
+
 }
