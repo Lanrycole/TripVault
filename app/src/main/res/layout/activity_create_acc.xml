@@ -6,100 +6,102 @@
     android:fontFamily="@font/poppins_regular"
     android:paddingLeft="26dp"
     android:paddingRight="26dp"
-    android:background="@drawable/profilebg"
+    android:gravity="center"
     android:orientation="vertical">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
+        android:layout_gravity="center"
+        android:fontFamily="@font/authem"
         android:gravity="center"
         android:padding="20dp"
-        android:layout_gravity="center"
         android:text="@string/create_account"
         android:textColor="@color/my_app_primary_variant_color"
-        android:textSize="24sp" />
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/signUpUserName"
         android:layout_width="match_parent"
-        android:layout_marginTop="15dp"
-        android:drawableStart = "@drawable/user2"
-        android:drawablePadding="5dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:autofillHints="Sign Up"
         android:background="@drawable/forms"
-        android:padding="10dp"
+        android:drawableStart="@drawable/user2"
+        android:drawablePadding="5dp"
         android:hint="@string/username"
-        app:cornerRadius="8dp"
-        android:autofillHints="Sign Up" />
+        android:padding="15dp"
+        app:cornerRadius="8dp" />
 
     <EditText
         android:id="@+id/signUpPasswd"
         android:layout_width="match_parent"
-        android:drawablePadding="2dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/forms"
-
         android:layout_marginTop="10dp"
-        android:inputType="textPassword"
+        android:background="@drawable/forms"
+        android:drawablePadding="2dp"
+
         android:hint="@string/password"
-        app:cornerRadius="8dp"/>
+        android:inputType="textPassword"
+        android:padding="15dp"
+        app:cornerRadius="8dp" />
+
     <EditText
         android:id="@+id/confirmsignUpPasswd"
         android:layout_width="match_parent"
-        android:drawablePadding="2dp"
-        android:background="@drawable/forms"
-
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_marginTop="10dp"
-        android:inputType="textPassword"
+
+        android:background="@drawable/forms"
+        android:drawablePadding="2dp"
         android:hint="@string/confirm_password"
-        app:cornerRadius="8dp"/>
+        android:inputType="textPassword"
+        android:padding="15dp"
+        app:cornerRadius="8dp" />
 
     <EditText
         android:id="@+id/signUpserEmail"
         android:layout_width="match_parent"
-        android:drawableStart = "@drawable/email1"
-        android:drawablePadding="5dp"
-        android:background="@drawable/forms"
-
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_marginTop="10dp"
         android:autofillHints="Email"
+
+        android:background="@drawable/forms"
+        android:drawableStart="@drawable/email1"
+        android:drawablePadding="5dp"
         android:hint="@string/email"
-        app:cornerRadius="8dp"/>
+        android:padding="15dp"
+        app:cornerRadius="8dp" />
 
     <EditText
         android:id="@+id/signUpUserAdd"
         android:layout_width="match_parent"
-        android:drawableStart = "@drawable/home"
-        android:drawablePadding="5dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:autofillHints="Address"
         android:background="@drawable/forms"
 
-        android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:drawableStart="@drawable/home"
+        android:drawablePadding="5dp"
         android:hint="@string/SignUpCity"
-        android:autofillHints="Address"
-        app:cornerRadius="8dp"/>
+        android:padding="15dp"
+        app:cornerRadius="8dp" />
 
     <EditText
         android:id="@+id/signUpUserPhoneNum"
         android:layout_width="match_parent"
-        android:drawableStart = "@drawable/phone"
-        android:drawablePadding="5dp"
-        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:inputType="phone"
-
-        android:hint="@string/phone_number"
+        android:layout_marginTop="10dp"
         android:autofillHints="Phone Number"
         android:background="@drawable/forms"
+        android:drawableStart="@drawable/phone"
+        android:drawablePadding="5dp"
 
-        app:cornerRadius="8dp"/>
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:padding="15dp"
+
+        app:cornerRadius="8dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

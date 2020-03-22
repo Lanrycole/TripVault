@@ -1,4 +1,4 @@
-package com.example.tripvault.data.Util;
+package com.example.tripvault.Util;
 
 public class Util {
 	public static final int DATABASE_VERSION =1;
