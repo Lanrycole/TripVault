@@ -92,7 +92,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		assert cursor != null;
 		contact.setUserId(Integer.parseInt(cursor.getString(0)));
 		contact.setUserName(cursor.getString(1));
-		contact.setCity(cursor.getString(2));
+		contact.setPassword(cursor.getString(2));
+		contact.setCity(cursor.getString(3));
 		contact.setEmailAddress(cursor.getString(4));
 		contact.setPhone_num(cursor.getString(5));
 
@@ -102,26 +103,29 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		List<Contact> contactList = new ArrayList<>();
 		SQLiteDatabase db = this.getReadableDatabase();
 		String selectAll = "SELECT * FROM " + Util.TABLE_NAME;
-		Cursor cursor = db.rawQuery(selectAll,null);
-		if (cursor.moveToNext()) {
-			do {
-				Contact contact = new Contact();
-				contact.setUserId(Integer.parseInt(cursor.getString(0)));
-				contact.setUserName(cursor.getString(1));
-				contact.setCity(cursor.getString(2));
-				contact.setEmailAddress(cursor.getString(4));
-				contact.setPhone_num(cursor.getString(5));
-				contactList.add(contact);
+		try (Cursor cursor = db.rawQuery(selectAll,null)) {
+			if (cursor.moveToNext()) {
+				do {
+					Contact contact = new Contact();
+					contact.setUserId(Integer.parseInt(cursor.getString(0)));
+					contact.setUserName(cursor.getString(1));
+					contact.setPassword(cursor.getString(2));
+					contact.setEmailAddress(cursor.getString(3));
+					contact.setCity(cursor.getString(4));
+					contact.setPhone_num(cursor.getString(5));
+					contactList.add(contact);
 
-			} while (cursor.moveToNext());
+				} while (cursor.moveToNext());
+			}
 		}
 		return contactList;
 	}
 	public int getCount(){
 		String select = "SELECT * FROM "+ Util.TABLE_NAME +"";
 		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor cursor = db.rawQuery(select, null);
-		return cursor.getCount();
+		try (Cursor cursor = db.rawQuery(select,null)) {
+			return cursor.getCount();
+		}
 	}
 
 	public void deleteAll(){

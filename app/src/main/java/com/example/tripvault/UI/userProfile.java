@@ -6,16 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tripvault.R;
 import com.example.tripvault.activityList;
+import com.squareup.picasso.Picasso;
 
 public class userProfile extends AppCompatActivity {
 
     private TextView welcomeinfo;
     Button goToPage;
 	Button deleteBtn;
+	ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +28,13 @@ public class userProfile extends AppCompatActivity {
         welcomeinfo = findViewById(R.id.welcomeInfos);
         goToPage= (Button) findViewById(R.id.go_to_page);
         deleteBtn= findViewById(R.id.delete_Profile);
-
-
 		deleteBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				gotoDrawer();
 			}
 		});
-
+		imageView = findViewById(R.id.userProImage);
 
 		Intent intent = getIntent();
         String userName = intent.getStringExtra("name");
@@ -44,6 +45,15 @@ public class userProfile extends AppCompatActivity {
                 transferToPage();
             }
         });
+
+
+		Picasso.get().load(R.drawable.camelmin)
+				.resize(500, 0)
+				.centerInside()
+				.error(R.drawable.camelmin)
+				.into(imageView);
+
+
 	}
 
     private void transferToPage(){
