@@ -47,7 +47,6 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 	String address;
 	String phone_number;
 	String confirmPassword;
-	String finalPassword = "";
 
 
 	private final byte[] ENCRYPTIONKEY = {9,115,51,86,105, 4, -31, -23, -68, 88, 17, 20, 3, -105, -119, -53};
@@ -87,7 +86,6 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 	@RequiresApi(api = Build.VERSION_CODES.O)
 	@Override
 	public void onClick(View v) {
-
     	switch (v.getId()){
 			case R.id.signUpButton:
 				try {
@@ -98,7 +96,8 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 				break;
 			case R.id.signUpCancel:
 				DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
-				Log.i("ALL","onClick: " +databaseHandler.getAllContact());
+//				databaseHandler.deleteAll();
+				Log.i("ALL","onClick: " + databaseHandler.getAllContact());
 				break;
 			}
 
@@ -123,13 +122,13 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 		}else {
 			String finalPassword  = encrypt(password);
 			Contact contact = new Contact();
-			contact.setUserName(username);
+			contact.setUserName(username.toLowerCase());
 			contact.setPassword(finalPassword);
 			contact.setEmailAddress(email);
 			contact.setCity(address);
 			contact.setPhone_num(phone_number);
 			DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
-//			databaseHandler.addContact(contact);
+			databaseHandler.addContact(contact);
 			Log.i("ALL","onClick: " +databaseHandler.getAllContact());
 		}
 	}

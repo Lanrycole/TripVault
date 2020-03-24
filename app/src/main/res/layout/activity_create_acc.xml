@@ -65,7 +65,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:autofillHints="Email"
-
         android:background="@drawable/forms"
         android:drawableStart="@drawable/email1"
         android:drawablePadding="5dp"
@@ -80,7 +79,6 @@
         android:layout_marginTop="10dp"
         android:autofillHints="Address"
         android:background="@drawable/forms"
-
         android:drawableStart="@drawable/home"
         android:drawablePadding="5dp"
         android:hint="@string/SignUpCity"

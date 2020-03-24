@@ -32,25 +32,25 @@ public class Contact {
 	public String getPassword() {
 		return password;
 	}
-	String getEmailAddress() {
+	public String getEmailAddress() {
 		return emailAddress;
 	}
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
-	String getCity() {
+	public String getCity() {
 		return city;
 	}
 	public void setCity(String city) {
 		this.city = city;
 	}
-	int getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	void setUserId(int userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	String getUserName() {
+	public String getUserName() {
 		return userName;
 	}
 	public void setUserName(String userName) {

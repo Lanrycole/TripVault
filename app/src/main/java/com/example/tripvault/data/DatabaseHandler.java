@@ -99,6 +99,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 		return contact;
 	}
+	public Contact getLogInInfo(String userName) {
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor cursor = db.query(Util.TABLE_NAME,new String[]{Util.KEY_USER_ID,Util.KEY_USERNAME, Util.KEY_USER_PASSWD},
+				Util.KEY_USERNAME + "=?",new String[]{String.valueOf(userName)},null,null,null);
+		Contact contact = new Contact();
+		if (cursor != null && cursor.moveToFirst() ){
+			cursor.moveToFirst();
+
+			contact.setUserId(Integer.parseInt(cursor.getString(0)));
+			contact.setUserName(cursor.getString(1));
+			contact.setPassword(cursor.getString(2));
+			cursor.close();
+		}
+
+		return contact;
+
+	}
+
+
 	public List<Contact> getAllContact() {
 		List<Contact> contactList = new ArrayList<>();
 		SQLiteDatabase db = this.getReadableDatabase();
