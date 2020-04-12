@@ -46,8 +46,6 @@
                 android:layout_height="300dp"
                 android:contentDescription="@string/profile_picture"
                 android:scaleType="centerCrop" />
-            <!--                android:src="@drawable/tour"-->
-
 
             <TextView
                 android:id="@+id/welcomeInfos"

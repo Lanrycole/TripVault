@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_id"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:padding="24dp"
+            android:background="@android:color/background_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tripdetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/trip_Info"
+                android:textSize="20dp" />
+
+
+            <EditText
+                android:id="@+id/triptittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tripdetails"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/tripTittle"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/triplocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/triptittle"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/trip_location"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/hotelbooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/triplocation"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/accomodation"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/dateoftrip"
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hotelbooking"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="@android:color/background_light"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/choose_date"
+                android:padding="14dp"
+                android:textColorHint="@color/my_app_primary_variant_color"
+                app:backgroundTint="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/selectedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hotelbooking"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="MM/DD/YY"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/tripnotes"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/dateoftrip"
+                android:fontFamily="@font/poppins_regular"
+                android:padding="10dp"
+                android:hint="@string/notes" />
+
+            <LinearLayout
+                android:id="@+id/uploads"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_below="@id/tripnotes"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/tripPictures"
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                      android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/upload_pictures"
+                    app:icon="@drawable/baseline_insert_photo_black_18dp"
+                    app:iconGravity="start"
+                    android:layout_margin="12dp"
+                    android:padding="0dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    app:backgroundTint="@color/my_app_color_on_surface"
+                    app:strokeColor="@color/colorPrimaryDark"
+                    app:strokeWidth="1.2dp" />
+
+                <Button
+                    android:id="@+id/tripFiles"
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                      android:fontFamily="@font/poppins_regular"
+                    android:padding="0dp"
+
+                    app:icon="@drawable/baseline_attachment_black_18dp"
+                    app:iconGravity="start"
+                    android:layout_margin="12dp"
+
+                    android:hint="@string/upload_attachments"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    app:backgroundTint="@color/my_app_color_on_surface"
+                    app:strokeColor="@color/colorPrimaryDark"
+
+                    app:strokeWidth="1.2dp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/uploads"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancelsaveTrip"
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@android:color/background_light"
+                    android:elevation="12dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/cancel_trip"
+                    android:textColor="@color/my_app_primary_variant_color"
+                    android:textColorHint="@color/my_app_primary_variant_color" />
+
+
+                <Button
+                    android:id="@+id/savetrip"
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/save_trip"
+                     android:textColorHint="@color/cardview_light_background"
+                    app:backgroundTint="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

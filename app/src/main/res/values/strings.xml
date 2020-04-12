@@ -37,4 +37,14 @@
     <string name="profile_name">Profile Name</string>
     <string name="SignUpCity">City</string>
     <string name="confirm_password">Confirm password</string>
+    <string name="upload_pictures"> Pictures...</string>
+    <string name="notes">Additional notes...</string>
+    <string name="choose_date">Choose Date</string>
+    <string name="tripTittle">Name:  Summer Camp 2020</string>
+    <string name="trip_Info">Trip Information</string>
+    <string name="trip_location">Location: Barcelona, London, Lagos...</string>
+    <string name="accomodation">Accomodation:  Hotel, Airbnb ....</string>
+    <string name="cancel_trip">Cancel</string>
+    <string name="save_trip">Save</string>
+    <string name="upload_attachments">Files</string>
 </resources>

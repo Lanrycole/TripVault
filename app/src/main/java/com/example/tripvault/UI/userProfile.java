@@ -2,8 +2,10 @@ package com.example.tripvault.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +21,7 @@ public class userProfile extends AppCompatActivity {
     Button goToPage;
 	Button deleteBtn;
 	ImageView imageView;
+	LayoutInflater layoutInflater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,25 +49,19 @@ public class userProfile extends AppCompatActivity {
             }
         });
 
-
 		Picasso.get().load(R.drawable.camelmin)
 				.resize(500, 0)
 				.centerInside()
 				.error(R.drawable.camelmin)
 				.into(imageView);
 
-
 	}
-
     private void transferToPage(){
         Intent intent = new Intent(this, activityList.class);
         startActivity(intent);
     }
-
 	public void gotoDrawer(){
 		Intent intent = new Intent(this, userDrawer.class);
 		startActivity(intent);
 	}
-
-
 }

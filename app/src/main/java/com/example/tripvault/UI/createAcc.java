@@ -22,6 +22,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -47,6 +48,7 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 	String address;
 	String phone_number;
 	String confirmPassword;
+	ArrayList<Contact > addContacts= new ArrayList<>();
 
 
 	private final byte[] ENCRYPTIONKEY = {9,115,51,86,105, 4, -31, -23, -68, 88, 17, 20, 3, -105, -119, -53};
@@ -95,9 +97,9 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 				}
 				break;
 			case R.id.signUpCancel:
-				DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
+//				DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
 //				databaseHandler.deleteAll();
-				Log.i("ALL","onClick: " + databaseHandler.getAllContact());
+				Log.i("ALL","onClick: " );
 				break;
 			}
 
@@ -129,7 +131,12 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 			contact.setPhone_num(phone_number);
 			DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
 			databaseHandler.addContact(contact);
-			Log.i("ALL","onClick: " +databaseHandler.getAllContact());
+			addContacts.add(contact);
+
+			for (Contact c: addContacts){
+				Log.i("ALL","onClick: " +c.toString());
+			}
+
 		}
 	}
 	public String encrypt(String password) throws  Exception{
