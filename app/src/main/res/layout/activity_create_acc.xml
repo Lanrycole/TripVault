@@ -4,131 +4,184 @@
     android:layout_height="fill_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fontFamily="@font/poppins_regular"
+    android:background="@android:color/white"
     android:paddingLeft="26dp"
-    android:paddingRight="26dp"
-    android:gravity="center"
-    android:orientation="vertical">
+     android:paddingRight="26dp"
+     android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/authem"
-        android:gravity="center"
-        android:padding="20dp"
+        android:layout_marginTop="30dp"
+        android:textAlignment="textStart"
+         android:fontFamily="@font/poppins_regular"
+        android:padding="30dp"
         android:text="@string/create_account"
         android:textColor="@color/my_app_primary_variant_color"
-        android:textSize="30sp" />
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/signUpUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="10dp"
         android:autofillHints="Sign Up"
         android:background="@drawable/forms"
         android:drawableStart="@drawable/user2"
         android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:hint="@string/username"
-        android:padding="15dp"
+        android:padding="12dp"
+        android:textColorHint="@color/my_app_primary_variant_color"
         app:cornerRadius="8dp" />
 
     <EditText
         android:id="@+id/signUpPasswd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:background="@drawable/forms"
         android:drawablePadding="2dp"
-
         android:hint="@string/password"
+        android:fontFamily="@font/poppins_regular"
         android:inputType="textPassword"
-        android:padding="15dp"
+        android:textColorHint="@color/my_app_primary_variant_color"
+        android:padding="12dp"
         app:cornerRadius="8dp" />
 
     <EditText
         android:id="@+id/confirmsignUpPasswd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-
+        android:layout_margin="10dp"
+        android:fontFamily="@font/poppins_regular"
         android:background="@drawable/forms"
         android:drawablePadding="2dp"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
-        android:padding="15dp"
+        android:textColorHint="@color/my_app_primary_variant_color"
+        android:padding="12dp"
         app:cornerRadius="8dp" />
 
     <EditText
         android:id="@+id/signUpserEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/poppins_regular"
         android:autofillHints="Email"
         android:background="@drawable/forms"
         android:drawableStart="@drawable/email1"
         android:drawablePadding="5dp"
         android:hint="@string/email"
-        android:padding="15dp"
+        android:textColorHint="@color/my_app_primary_variant_color"
+        android:padding="12dp"
         app:cornerRadius="8dp" />
 
     <EditText
         android:id="@+id/signUpUserAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:autofillHints="Address"
         android:background="@drawable/forms"
         android:drawableStart="@drawable/home"
+        android:textColorHint="@color/my_app_primary_variant_color"
+        android:fontFamily="@font/poppins_regular"
         android:drawablePadding="5dp"
         android:hint="@string/SignUpCity"
-        android:padding="15dp"
+        android:padding="12dp"
         app:cornerRadius="8dp" />
 
     <EditText
         android:id="@+id/signUpUserPhoneNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:autofillHints="Phone Number"
         android:background="@drawable/forms"
         android:drawableStart="@drawable/phone"
+        android:textColorHint="@color/my_app_primary_variant_color"
         android:drawablePadding="5dp"
-
+        android:fontFamily="@font/poppins_regular"
         android:hint="@string/phone_number"
         android:inputType="phone"
-        android:padding="15dp"
-
+        android:padding="12dp"
         app:cornerRadius="8dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+         android:orientation="vertical"
         android:gravity="center">
-
-        <Button
-
-            android:id="@+id/signUpCancel"
-            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:text="@string/cancel"
-            android:backgroundTint="@android:color/background_light"
-            android:textColor="@color/my_app_primary_variant_color"
-            app:cornerRadius="8dp" />
 
         <Button
             android:id="@+id/signUpButton"
             style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-            android:backgroundTint= "@color/my_app_primary_variant_color"
-            android:textColor="@android:color/background_light"
-            android:layout_width="wrap_content"
+            android:backgroundTint= "@android:color/background_light"
+            android:textColor="@color/my_app_primary_variant_color"
+             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_margin="10dp"
             android:text="Sign Up"
             app:cornerRadius="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/termsandconditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:backgroundTint="@android:color/background_light"
+                android:textColor="@color/my_app_primary_variant_color"
+                app:cornerRadius="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/my_app_primary_variant_color"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Agree to terms and conditions"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/my_app_primary_variant_color"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_italic"
+                android:text="Have an Account? "/>
+
+            <Button
+                android:id="@+id/SignInlogin"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:textColor="@color/my_app_primary_variant_color"
+                android:text="@string/log_in"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="20sp"
+                app:icon="@drawable/round_arrow_right_alt_black_18dp"
+                app:iconGravity="end"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+
     </LinearLayout>
 </LinearLayout>

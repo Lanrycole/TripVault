@@ -32,8 +32,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 public class createAcc extends AppCompatActivity implements View.OnClickListener {
-    Button signUpCancel;
-    EditText signUsername;
+     EditText signUsername;
 	EditText signUpPasswd;
 	EditText confirmPasswd;
 
@@ -61,8 +60,7 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_acc);
 
-        signUpCancel = findViewById(R.id.signUpCancel);
-        signUsername = findViewById(R.id.signUpUserName);
+         signUsername = findViewById(R.id.signUpUserName);
 		signUpPasswd = findViewById(R.id.signUpPasswd);
 		signUpEmail = findViewById(R.id.signUpserEmail);
 		signupPhoneNumber = findViewById(R.id.signUpUserPhoneNum);
@@ -80,7 +78,6 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 		secretKey = new SecretKeySpec(ENCRYPTIONKEY,"AES" );
 
 		signUpButton.setOnClickListener(this);
-		signUpCancel.setOnClickListener(this);
 
     }
 
@@ -96,13 +93,7 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 					e.printStackTrace();
 				}
 				break;
-			case R.id.signUpCancel:
-//				DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
-//				databaseHandler.deleteAll();
-				Log.i("ALL","onClick: " );
-				break;
 			}
-
 		}
 
 	@RequiresApi(api = Build.VERSION_CODES.O)
