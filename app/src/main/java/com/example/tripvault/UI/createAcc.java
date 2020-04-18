@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tripvault.MainActivity;
 import com.example.tripvault.R;
 import com.example.tripvault.data.Contact;
 import com.example.tripvault.data.DatabaseHandler;
@@ -74,9 +76,7 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 		} catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
 			e.printStackTrace();
 		}
-
 		secretKey = new SecretKeySpec(ENCRYPTIONKEY,"AES" );
-
 		signUpButton.setOnClickListener(this);
 
     }
@@ -96,7 +96,7 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 			}
 		}
 
-	@RequiresApi(api = Build.VERSION_CODES.O)
+
 	public void processRegistration() throws Exception {
 
 		username = signUsername.getText().toString();
@@ -114,6 +114,7 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 
 		}else {
 			String finalPassword  = encrypt(password);
+			Log.d("ENCRYPT","Encrypted Password: " + finalPassword);
 			Contact contact = new Contact();
 			contact.setUserName(username.toLowerCase());
 			contact.setPassword(finalPassword);
@@ -123,10 +124,10 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 			DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
 			databaseHandler.addContact(contact);
 			addContacts.add(contact);
-
-			for (Contact c: addContacts){
-				Log.i("ALL","onClick: " +c.toString());
-			}
+		Toast.makeText(getApplicationContext(), "Sign up Successful", Toast.LENGTH_SHORT).show();
+			Log.i("ALL","onClick: " +databaseHandler.getAllContact());
+		Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+		startActivity(intent);
 
 		}
 	}

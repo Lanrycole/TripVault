@@ -14,20 +14,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins_regular"
-        android:padding="15dp"
+
         android:text="@string/trip_vault"
         android:textAlignment="center"
         android:textColor="@color/my_app_color_on_secondary"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold" />
     <ImageView
         android:id="@+id/homedisplay"
         android:layout_below="@+id/App_Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
          />
 
 
@@ -81,7 +81,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_below="@+id/Password"
-                android:gravity="center"
+
                 >
 
 
@@ -90,12 +90,11 @@
                     style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:backgroundTint="@color/my_app_primary_variant_color"
                     android:textColor="@color/my_app_color_on_secondary"
                      android:padding="5dp"
-                    android:layout_margin="20dp"
-                    android:text="@string/log_in"
+                     android:text="@string/log_in"
+                    android:layout_margin="10dp"
                     app:icon="@drawable/round_arrow_right_alt_black_18dp"
                     app:iconGravity="end"
                     app:cornerRadius="8dp" />
@@ -103,7 +102,7 @@
                 <Button
                     android:id="@+id/createAccount"
                     style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                    android:layout_margin="20dp"
+                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@android:color/background_light"
@@ -114,12 +113,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
                     android:padding="15dp"
                     android:text="@string/user_agreement"
-                    android:textAlignment="textEnd"
                     android:textColor="@color/my_app_primary_variant_color"
                     android:textSize="20sp" />
+
+
 
             </LinearLayout>
 

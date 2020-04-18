@@ -19,7 +19,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	}
 
-
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		String CREATE_CONTACT_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "(" + Util.KEY_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -48,7 +47,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		contentValues.put(Util.KEY_EMAIL, contact.getEmailAddress());
 		contentValues.put(Util.KEY_CITY,contact.getCity());
 		contentValues.put(Util.KEY_PHONE,contact.getPhone_num());
-
 
 		db.insert(Util.TABLE_NAME,null,contentValues);
 		Log.i("Added","addContact: Item Added");
@@ -86,32 +84,34 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.query(Util.TABLE_NAME,new String[]{Util.KEY_USER_ID,Util.KEY_USERNAME, Util.KEY_USER_PASSWD, Util.KEY_EMAIL, Util.KEY_CITY, Util.KEY_PHONE},
 				Util.KEY_USER_ID + "=?",new String[]{String.valueOf(id)},null,null,null);
-		if (cursor != null)
-			cursor.moveToFirst();
 		Contact contact = new Contact();
-		assert cursor != null;
-		contact.setUserId(Integer.parseInt(cursor.getString(0)));
-		contact.setUserName(cursor.getString(1));
-		contact.setPassword(cursor.getString(2));
-		contact.setCity(cursor.getString(3));
-		contact.setEmailAddress(cursor.getString(4));
-		contact.setPhone_num(cursor.getString(5));
-
+		if (cursor != null) {
+			cursor.moveToFirst();
+ 			contact.setUserId(Integer.parseInt(cursor.getString(0)));
+			contact.setUserName(cursor.getString(1));
+			contact.setPassword(cursor.getString(2));
+			contact.setCity(cursor.getString(3));
+			contact.setEmailAddress(cursor.getString(4));
+			contact.setPhone_num(cursor.getString(5));
+		}
 		return contact;
 	}
+
+
 	public Contact getLogInInfo(String userName) {
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.query(Util.TABLE_NAME,new String[]{Util.KEY_USER_ID,Util.KEY_USERNAME, Util.KEY_USER_PASSWD},
 				Util.KEY_USERNAME + "=?",new String[]{String.valueOf(userName)},null,null,null);
+
 		Contact contact = new Contact();
-		if (cursor != null && cursor.moveToFirst() ){
-			cursor.moveToFirst();
+
+		do{
 
 			contact.setUserId(Integer.parseInt(cursor.getString(0)));
 			contact.setUserName(cursor.getString(1));
 			contact.setPassword(cursor.getString(2));
 			cursor.close();
-		}
+		}while (cursor.moveToNext());
 
 		return contact;
 
