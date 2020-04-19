@@ -69,7 +69,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:hint="@string/choose_date"
                 android:padding="14dp"
-                android:textColorHint="@color/my_app_primary_variant_color"
+                android:textColorHint="@color/app_main_color"
                 app:backgroundTint="@color/colorPrimaryDark" />
 
             <TextView
@@ -156,8 +156,8 @@
                     android:elevation="12dp"
                     android:fontFamily="@font/poppins_regular"
                     android:hint="@string/cancel_trip"
-                    android:textColor="@color/my_app_primary_variant_color"
-                    android:textColorHint="@color/my_app_primary_variant_color" />
+                    android:textColor="@color/app_main_color"
+                    android:textColorHint="@color/app_main_color" />
 
 
                 <Button

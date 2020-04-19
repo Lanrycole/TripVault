@@ -30,7 +30,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="30dp"
             android:tint="@android:color/white"
-            app:backgroundTint="@color/my_app_primary_variant_color"
+            app:backgroundTint="@color/app_main_color"
             app:borderWidth="0dp"
             app:elevation="8dp"
             app:fabSize="normal"
@@ -44,8 +44,8 @@
         app:menu="@menu/nav_menu"
         android:layout_gravity="start"
         app:headerLayout="@layout/header_display"
-        app:itemTextColor="@color/my_app_primary_variant_color"
-        app:itemIconTint="@color/my_app_primary_variant_color"
+        app:itemTextColor="@color/app_main_color"
+        app:itemIconTint="@color/app_main_color"
         android:background="@color/my_app_surface_color"
         android:id="@+id/nav_menu" />
 

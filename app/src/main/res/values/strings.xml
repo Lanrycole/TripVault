@@ -47,4 +47,5 @@
     <string name="cancel_trip">Cancel</string>
     <string name="save_trip">Save</string>
     <string name="upload_attachments">Files</string>
+    <string name="agree_to_terms_and_conditions">Agree to terms and conditions</string>
 </resources>

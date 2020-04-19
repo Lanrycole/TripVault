@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         Button createAcc = findViewById(R.id.createAccount);
         cardView = findViewById(R.id.cardView);
         imageView = findViewById(R.id.homedisplay);
-
+getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setTitle(" ");
         anim_Slide_Up();
 //		anim_Slide_down();
         createAcc.setOnClickListener(new View.OnClickListener() {
@@ -55,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Picasso.get().load(R.drawable.worldtravel)
-                .resize(1700, 0)
-                .centerCrop()
-                .error(R.drawable.camelmin)
+        Picasso.get().load(R.drawable.screennew)
+                .resize(1800, 0)
+                .centerInside()
+                .error(R.drawable.screennew)
                 .into(imageView);
 
     }

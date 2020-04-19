@@ -19,7 +19,7 @@
         android:padding="25dp"
         android:text="@string/trip_vault"
         android:textAlignment="center"
-        android:textColor="@color/my_app_primary_variant_color"
+        android:textColor="@color/app_main_color"
         android:textSize="40sp" />
 
     <com.google.android.material.card.MaterialCardView
@@ -54,7 +54,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:padding="10dp"
                 android:textAlignment="center"
-                android:textColor="@color/my_app_primary_variant_color"
+                android:textColor="@color/app_main_color"
                 android:textSize="23sp" />
 
             <LinearLayout
@@ -79,7 +79,7 @@
                     android:fontFamily="@font/poppins_italic"
                     android:hint="@string/user_location"
                     android:padding="5dp"
-                    android:textColorHint="@color/my_app_primary_variant_color"
+                    android:textColorHint="@color/app_main_color"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -175,8 +175,8 @@
             android:padding="10dp"
             android:layout_margin="10sp"
             android:text="@string/edit_profile"
-            android:textColor="@color/my_app_primary_variant_color"
-            app:strokeColor="@color/my_app_primary_variant_color" />
+            android:textColor="@color/app_main_color"
+            app:strokeColor="@color/app_main_color" />
         <Button
             android:id="@+id/go_to_page"
             style="?attr/materialButtonOutlinedStyle"
@@ -185,8 +185,8 @@
             android:layout_margin="10sp"
             android:text="@string/go_to_page"
             android:padding="10dp"
-            android:textColor="@color/my_app_primary_variant_color"
-            app:strokeColor="@color/my_app_primary_variant_color" />
+            android:textColor="@color/app_main_color"
+            app:strokeColor="@color/app_main_color" />
 
 
     </LinearLayout>
@@ -199,5 +199,5 @@
         android:layout_margin="10sp"
         android:padding="10dp"
         android:text="@string/delete_profile"
-        android:textColor="@color/my_app_primary_variant_color" />
+        android:textColor="@color/app_main_color" />
 </LinearLayout>

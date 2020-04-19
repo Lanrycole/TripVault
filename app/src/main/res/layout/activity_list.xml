@@ -29,9 +29,9 @@
             android:backgroundTint="@color/my_app_surface_color"
             android:text="@string/search"
 
-            android:textColor="@color/my_app_primary_variant_color"
+            android:textColor="@color/app_main_color"
             app:cornerRadius="8dp"
-            app:strokeColor="@color/my_app_primary_variant_color" />
+            app:strokeColor="@color/app_main_color" />
 
 
     </LinearLayout>
@@ -49,7 +49,7 @@
             android:layout_gravity="bottom|right"
             android:layout_margin="30dp"
             android:tint="@android:color/white"
-            app:backgroundTint="@color/my_app_primary_variant_color"
+            app:backgroundTint="@color/app_main_color"
             app:borderWidth="0dp"
             app:elevation="8dp"
             app:fabSize="normal"

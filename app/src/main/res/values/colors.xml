@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#3FEEE6</color>
     <color name="colorAccent2">#55bcc9</color>
-    <color name="my_app_primary_variant_color">#252981</color>
-    <color name="my_app_secondary_variant_color">#FF5722</color>
+    <color name="app_main_color">#1A237E</color>
+    <color name="app_color_accent">#ff6f00</color>
     <color name="my_app_surface_color">#F5F6FA</color>
     <color name="my_app_color_on_primary">#FFEB3B</color>
     <color name="my_app_color_on_secondary">#97CAEF</color>
