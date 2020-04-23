@@ -17,14 +17,15 @@ import android.widget.Toast;
 
 import com.example.tripvault.UI.createAcc;
 import com.example.tripvault.UI.userDrawer;
-import com.example.tripvault.data.Contact;
+import com.example.tripvault.data.User;
 import com.example.tripvault.data.DatabaseHandler;
-import com.squareup.picasso.Picasso;
+ import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "THIS CLASS";
     CardView cardView, brandName;
     ImageView imageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         Button createAcc = findViewById(R.id.createAccount);
         cardView = findViewById(R.id.cardView);
         imageView = findViewById(R.id.homedisplay);
-getSupportActionBar().setTitle(" ");
-        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().hide();
+
         anim_Slide_Up();
 //		anim_Slide_down();
         createAcc.setOnClickListener(new View.OnClickListener() {
@@ -73,34 +74,26 @@ getSupportActionBar().setTitle(" ");
     public void goToUserPage() throws Exception {
         DatabaseHandler databaseHandler = new DatabaseHandler(this);
 
-//		Log.i("ALL CONTACT", "goToUserPage: "+ databaseHandler.getAllContact());
+
         EditText username = findViewById(R.id.username);
         EditText password = findViewById(R.id.Password);
-        String typedName = username.getText().toString().toLowerCase();
-        String userPass = password.getText().toString();
+        String typedName = username.getText().toString().toLowerCase().trim();
+        String userPass = password.getText().toString().trim();
+        if (!typedName.isEmpty()) {
 
-//		if (!typedName.isEmpty()) {
-//			Toast.makeText(MainActivity.this, typedName + " successfully signed in", Toast.LENGTH_SHORT).show();
-//
-//			Intent intent = new Intent(this, userDrawer.class);
-// 			startActivity(intent);
-//		} else {
-//			Toast.makeText(getApplicationContext(), "Sign in unSuccessful", Toast.LENGTH_SHORT).show();
-//		}
-
-        Contact getcontact = databaseHandler.getLogInInfo(typedName);
-        createAcc cr = new createAcc();
-        String pass = cr.decrypt(getcontact.getPassword());
-        String s = getcontact.getPassword();
-        Log.i(TAG, "USEERRRRRRRRRRRRRRRRRRRRRR: " + s);
-
-        if (!getcontact.getUserName().isEmpty()) {
-            Toast.makeText(this, getcontact.getUserName() + " successfully signed in", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, userDrawer.class);
-            startActivity(intent);
+            User getContact = databaseHandler.getLogInInfo(typedName);
+            if (getContact.getUserName().equals(typedName)) {
+                Toast.makeText(this, "Sign in Successful", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, userDrawer.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Sign in failed", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(getApplicationContext(), "Sign in failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter a username", Toast.LENGTH_SHORT).show();
+
         }
+
     }
 
     private void anim_Slide_Up() {
@@ -140,6 +133,7 @@ getSupportActionBar().setTitle(" ");
 
 
     }
+
 }
 
 

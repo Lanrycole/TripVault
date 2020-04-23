@@ -1,193 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:paddingStart="8dp"
-    android:paddingEnd="8dp"
-     android:background="@color/app_main_color"
-     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/app_main_color"
     android:fontFamily="@font/poppins_regular"
     android:gravity="center"
-     android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="textStart"
         android:fontFamily="@font/poppins_regular"
         android:padding="10dp"
         android:text="@string/create_account"
-         android:textColor="@color/app_color_accent"
-        android:textSize="70sp"
+        android:textAlignment="textStart"
+        android:textColor="@color/app_color_accent"
+        android:textSize="50sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/signUpUserName"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/usernameError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:autofillHints="Sign Up"
-
-        android:background="@drawable/forms"
-        android:drawableStart="@drawable/baseline_account_circle_white_18"
-        android:drawablePadding="5dp"
-        android:fontFamily="@font/poppins_regular"
-        android:hint="@string/username"
-        android:textColor="@color/colorAccent"
-        android:padding="6dp"
+        app:endIconTint= "@android:color/white"
         android:textColorHint="@color/colorAccent"
-        app:cornerRadius="8dp" />
+        app:hintTextColor="@color/colorAccent"
+        app:errorEnabled="true"
+        app:boxStrokeColor="@color/app_color_accent"
+        app:endIconMode="clear_text">
 
-    <EditText
-        android:id="@+id/signUpPasswd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/forms"
-        android:drawablePadding="5dp"
-        android:drawableStart="@drawable/baseline_lock_white_18"
-        android:hint="@string/password"
-        android:textColor="@color/colorAccent"
-        android:fontFamily="@font/poppins_regular"
-        android:inputType="textPassword"
-        android:textColorHint="@color/colorAccent"
-        android:padding="6dp"
-        app:cornerRadius="8dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signUpUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:autofillHints="Sign Up"
+             android:drawableStart="@drawable/baseline_account_circle_white_18"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/username"
+            android:textColor="@color/colorAccent"
+            android:padding="10dp"
+             app:cornerRadius="8dp" />
 
-    <EditText
-        android:id="@+id/confirmsignUpPasswd"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/passwordError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:fontFamily="@font/poppins_regular"
-        android:background="@drawable/forms"
-        android:drawablePadding="5dp"
-        android:hint="@string/confirm_password"
-        android:drawableStart="@drawable/baseline_lock_white_18"
-        android:inputType="textPassword"
-        android:textColor="@color/colorAccent"
+        app:endIconTint= "@android:color/white"
         android:textColorHint="@color/colorAccent"
-        android:padding="6dp"
-        app:cornerRadius="8dp" />
+        app:hintTextColor="@color/colorAccent"
+        app:boxStrokeColor="@color/app_color_accent"
+        app:endIconMode="password_toggle">
 
-    <EditText
-        android:id="@+id/signUpserEmail"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signUpPasswd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:drawablePadding="5dp"
+            android:drawableStart="@drawable/baseline_lock_white_18"
+            android:hint="@string/password"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:fontFamily="@font/poppins_regular"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            app:cornerRadius="8dp"  />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/confirmpasswordError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:fontFamily="@font/poppins_regular"
-        android:autofillHints="Email"
-        android:background="@drawable/forms"
-        android:drawableStart="@drawable/baseline_alternate_email_white_18"
-        android:drawablePadding="5dp"
-        android:hint="@string/email"
-        android:textColor="@color/colorAccent"
+        app:endIconTint= "@android:color/white"
         android:textColorHint="@color/colorAccent"
-        android:padding="6dp"
-        app:cornerRadius="8dp" />
+        app:hintTextColor="@color/colorAccent"
+        app:boxStrokeColor="@color/app_color_accent"
+        app:endIconMode="password_toggle">
 
-    <EditText
-        android:id="@+id/signUpUserAdd"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmsignUpPasswd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:drawableStart="@drawable/baseline_lock_white_18"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            app:hintTextColor="@color/colorAccent"
+            android:padding="10dp"
+            android:textColor="@color/colorAccent"
+             app:cornerRadius="8dp"  />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/emailError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:autofillHints="Address"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/forms"
-        android:drawableStart="@drawable/baseline_location_city_white_18"
+        app:endIconTint= "@android:color/white"
+        app:hintTextColor="@color/colorAccent"
+        app:errorEnabled="true"
         android:textColorHint="@color/colorAccent"
-        android:fontFamily="@font/poppins_regular"
-        android:drawablePadding="5dp"
-        android:hint="@string/SignUpCity"
-        android:textColor="@color/colorAccent"
+        app:boxStrokeColor="@color/app_color_accent"
+        app:endIconMode="clear_text">
 
-        android:padding="6dp"
-        app:cornerRadius="8dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signUpserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Email"
+             android:drawableStart="@drawable/baseline_alternate_email_white_18"
+            android:drawablePadding="5dp"
+            app:hintTextColor="@color/colorAccent"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/email"
+            android:padding="10dp"
+            android:textColor="@color/colorAccent"
+             app:cornerRadius="8dp"/>
 
-    <EditText
-        android:id="@+id/signUpUserPhoneNum"
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/cityError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:autofillHints="Phone Number"
-        android:background="@drawable/forms"
-        android:drawableStart="@drawable/baseline_smartphone_white_18"
+        app:endIconTint= "@android:color/white"
+        app:errorEnabled="true"
         android:textColorHint="@color/colorAccent"
-        android:drawablePadding="5dp"
-        android:fontFamily="@font/poppins_regular"
-        android:hint="@string/phone_number"
-        android:inputType="phone"
-        android:textColor="@color/colorAccent"
-        android:padding="6dp"
-        app:cornerRadius="8dp" />
+        app:hintTextColor="@color/colorAccent"
+        app:boxStrokeColor="@color/app_color_accent"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signUpUserAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextColor="@color/colorAccent"
+            android:autofillHints="Address"
+             android:drawableStart="@drawable/baseline_location_city_white_18"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/SignUpCity"
+            android:padding="10dp"
+            android:textColor="@color/colorAccent"
+            app:cornerRadius="8dp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/phoneError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:errorEnabled="true"
+        app:endIconTint= "@android:color/white"
+        app:hintTextColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        app:boxStrokeColor="@color/app_color_accent"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signUpUserPhoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Phone Number"
+             android:drawableStart="@drawable/baseline_smartphone_white_18"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:padding="10dp"
+            app:hintTextColor="@color/colorAccent"
+            android:textColor="@color/colorAccent"
+             app:cornerRadius="8dp"  />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/signUpButton"
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-        android:backgroundTint= "@android:color/background_light"
-        android:textColor="@color/app_main_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:fontFamily="@font/poppins_regular"
-        android:layout_margin="5dp"
-
-        android:text="Sign Up"
+         android:fontFamily="@font/poppins_regular"
+        android:text="@string/sign_up"
+        android:backgroundTint="@color/app_color_accent"
+        android:textColor="@color/app_main_color"
         app:cornerRadius="8dp" />
 
 
-<!--        <CheckBox-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="5sp"-->
-<!--            android:textSize="16sp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:textColor="@color/colorAccent"-->
-<!--            android:text="@string/agree_to_terms_and_conditions"-->
-<!--            />-->
+<!--            <CheckBox-->
+<!--                android:id="@+id/checkbox"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5sp"-->
+<!--                android:textSize="16sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textColor="@color/colorAccent"-->
+<!--                android:text="@string/agree_to_terms_and_conditions"-->
+<!--                />-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:gravity="center"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
-            android:textSize="15sp"
             android:fontFamily="@font/poppins_italic"
-            android:text="Have an Account? "/>
+            android:text="@string/have_an_account"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/SignInlogin"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/poppins_regular"
             android:shadowColor="@color/app_color_accent"
             android:text="@string/log_in"
-            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/colorAccent"
             android:textSize="15sp"
-            app:rippleColor="@color/app_color_accent"
-            app:iconTint="@color/colorAccent"
+            app:cornerRadius="8dp"
             app:icon="@drawable/round_arrow_right_alt_black_18dp"
-             app:strokeWidth="1dp"
             app:iconGravity="end"
-            app:cornerRadius="8dp" />
+            app:iconTint="@color/colorAccent"
+            app:rippleColor="@color/app_color_accent"
+            app:strokeWidth="1dp" />
     </LinearLayout>
 </LinearLayout>
 

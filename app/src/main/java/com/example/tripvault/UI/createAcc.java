@@ -2,47 +2,52 @@ package com.example.tripvault.UI;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ToolbarWidgetWrapper;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.example.tripvault.MainActivity;
 import com.example.tripvault.R;
-import com.example.tripvault.data.Contact;
+import com.example.tripvault.data.User;
 import com.example.tripvault.data.DatabaseHandler;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.textfield.TextInputLayout;
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
-import java.security.MessageDigest;
+import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Objects;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 public class createAcc extends AppCompatActivity implements View.OnClickListener {
+    private static Cipher decipher;
+    private static Key secretKey;
+    private static Cipher cipher;
     EditText signUsername;
     EditText signUpPasswd;
     EditText confirmPasswd;
-
+    CheckBox checkBox;
+    TextInputLayout userNameError;
+    TextInputLayout passwordErroe;
+    TextInputLayout confirmPasswordError;
+    TextInputLayout emailError;
+    TextInputLayout cityError;
+    TextInputLayout phoneNumError;
     EditText signUpEmail;
     EditText signUpAddress;
     EditText signupPhoneNumber;
@@ -56,12 +61,11 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
     String phone_number;
     String confirmPassword;
     MaterialToolbar toolbar;
-    ArrayList<Contact> addContacts = new ArrayList<>();
+    ArrayList<User> addContacts = new ArrayList<>();
 
 
     private final byte[] ENCRYPTIONKEY = {9, 115, 51, 86, 105, 4, -31, -23, -68, 88, 17, 20, 3, -105, -119, -53};
-    private Cipher cipher, decipher;
-    private SecretKey secretKey;
+
     private final String AES = "AES";
 
     @SuppressLint("RestrictedApi")
@@ -78,12 +82,12 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
         signUpButton = findViewById(R.id.signUpButton);
         confirmPasswd = findViewById(R.id.confirmsignUpPasswd);
         signInFromCreate = findViewById(R.id.SignInlogin);
-//        toolbar = findViewById(R.id.toolbar);
 
-    ;
-     getSupportActionBar().setDisplayShowHomeEnabled(true);
-     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-     getSupportActionBar().setTitle(" ");
+
+        ;
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(" ");
 
 
         try {
@@ -95,16 +99,6 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
         secretKey = new SecretKeySpec(ENCRYPTIONKEY, "AES");
         signUpButton.setOnClickListener(this);
         signInFromCreate.setOnClickListener(this);
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        if (item.getItemId() == android.R.id.home) {
-            this.finish();
-        }
-        return super.onOptionsItemSelected(item);
 
     }
 
@@ -128,6 +122,14 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
 
 
     public void processRegistration() throws Exception {
+        checkBox = findViewById(R.id.checkbox);
+
+        userNameError = findViewById(R.id.usernameError);
+        passwordErroe = findViewById(R.id.passwordError);
+        cityError = findViewById(R.id.cityError);
+        confirmPasswordError = findViewById(R.id.confirmpasswordError);
+        phoneNumError = findViewById(R.id.phoneError);
+        emailError = findViewById(R.id.emailError);
 
         username = signUsername.getText().toString();
         email = signUpEmail.getText().toString();
@@ -136,40 +138,75 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
         phone_number = signupPhoneNumber.getText().toString();
         confirmPassword = confirmPasswd.getText().toString();
 
-        if (username.isEmpty() || email.isEmpty() || address.isEmpty() || phone_number.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_LONG).show();
-        } else if (!password.equals(confirmPassword)) {
-            Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_LONG).show();
-
+        if (username.isEmpty()) {
+            userNameError.setError("Enter a username");
         } else {
+            userNameError.setError(" ");
+        }
+        if (password.isEmpty()) {
+            passwordErroe.setError("Enter password");
+        } else {
+            passwordErroe.setError(" ");
+        }
+        if (!password.equals(confirmPassword)) {
+            confirmPasswordError.setError("Password does not match");
+            passwordErroe.setError("Password does not match");
+        } else {
+            confirmPasswordError.setError(" ");
+            passwordErroe.setError(" ");
+        }
+        if (address.isEmpty()) {
+            cityError.setError("Enter a city");
+        } else {
+            cityError.setError(" ");
+        }
+        if (phone_number.isEmpty()) {
+            phoneNumError.setError("Enter phone Number");
+        } else {
+            phoneNumError.setError(" ");
+        }
+        if (email.isEmpty()) {
+            emailError.setError("Enter an email");
+        } else {
+            emailError.setError(" ");
+        }
+
+        if (!email.isEmpty() && !address.isEmpty() && !phone_number.isEmpty() && !password.isEmpty() && !confirmPassword.isEmpty() && password.equals(confirmPassword)) {
+
             String finalPassword = encrypt(password);
             Log.d("ENCRYPT", "Encrypted Password: " + finalPassword);
-            Contact contact = new Contact();
-            contact.setUserName(username.toLowerCase());
-            contact.setPassword(finalPassword);
-            contact.setEmailAddress(email);
-            contact.setCity(address);
-            contact.setPhone_num(phone_number);
+            User user = new User();
+            user.setUserName(username.toLowerCase());
+            user.setPassword(finalPassword);
+            user.setEmailAddress(email);
+            user.setCity(address);
+            user.setPhone_num(phone_number);
             DatabaseHandler databaseHandler = new DatabaseHandler(createAcc.this);
-            databaseHandler.addContact(contact);
-            addContacts.add(contact);
+            databaseHandler.addContact(user);
+            addContacts.add(user);
             Toast.makeText(getApplicationContext(), "Sign up Successful", Toast.LENGTH_SHORT).show();
             Log.i("ALL", "onClick: " + databaseHandler.getAllContact());
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
-
         }
+
+
     }
 
-    public String encrypt(String password) throws Exception {
+
+
+
+    public static String encrypt(String password) throws InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+
         byte[] stringByte = password.getBytes();
         byte[] encryptedByte = new byte[stringByte.length];
         cipher.init(Cipher.ENCRYPT_MODE, secretKey);
         encryptedByte = cipher.doFinal(stringByte);
-        return new String(encryptedByte, StandardCharsets.ISO_8859_1);
+        String pass = new String(encryptedByte, StandardCharsets.ISO_8859_1);
+        return pass;
     }
 
-    public String decrypt(String password) throws Exception {
+    public static String decrypt(String password) throws InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         byte[] encrypted = password.getBytes(StandardCharsets.ISO_8859_1);
         String decryptedString = password;
         byte[] decryption;
@@ -179,4 +216,13 @@ public class createAcc extends AppCompatActivity implements View.OnClickListener
         return decryptedString;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

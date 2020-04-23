@@ -38,14 +38,17 @@
     <string name="SignUpCity">City</string>
     <string name="confirm_password">Confirm password</string>
     <string name="upload_pictures"> Pictures...</string>
-    <string name="notes">Additional Notes...</string>
+    <string name="notes">Notes...</string>
     <string name="choose_date">Choose Date</string>
-    <string name="tripTittle">Name:  Summer Camp 2020</string>
-    <string name="trip_Info">Trip Information</string>
-    <string name="trip_location">Location: Barcelona, London, Lagos...</string>
-    <string name="accomodation">Accomodation:  Hotel, Airbnb ....</string>
+    <string name="tripTittle"> Summer 2020</string>
+    <string name="trip_Info">Add Trip...</string>
+    <string name="trip_location">Barcelona, London,...</string>
+    <string name="accomodation">Blue house by the lake.</string>
     <string name="cancel_trip">Cancel</string>
     <string name="save_trip">Save</string>
     <string name="upload_attachments">Files</string>
     <string name="agree_to_terms_and_conditions">Agree to terms and conditions</string>
+    <string name="mm_dd_yy">MM/DD/YY</string>
+    <string name="have_an_account">Have an Account?</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

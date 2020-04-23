@@ -41,7 +41,8 @@ ImageView imageView;
 		Toolbar toolbar;
 		builder= new AlertDialog.Builder(this);
 		toolbar=findViewById(R.id.main_toolbar);
-		setSupportActionBar(toolbar);
+
+		getSupportActionBar().hide();
 		DrawerLayout drawerLayout;
 		NavigationView navigationView;
 
@@ -123,16 +124,13 @@ ImageView imageView;
 
 	@Override
 	public void onPointerCaptureChanged(boolean hasCapture) {
-
 	}
 
 	private void dispatchTakePictureIntent() {
 		Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
  			startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI), REQUEST_IMAGE_CAPTURE);
-
 		}
-
 	}
 
 }

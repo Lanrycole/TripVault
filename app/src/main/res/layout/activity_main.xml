@@ -29,7 +29,7 @@
          android:adjustViewBounds="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-          />
+        android:contentDescription="TODO" />
 
 
     <com.google.android.material.card.MaterialCardView
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:layout_marginTop="15dp"
+                 android:layout_marginTop="15dp"
                  android:drawableStart="@drawable/baseline_account_circle_white_18"
                 android:drawableTint="@color/app_main_color"
                 android:drawablePadding="2dp"
@@ -112,18 +112,13 @@
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:text="@string/create_account"
                     android:backgroundTint="@color/app_color_accent"
                     android:textColor="@color/app_main_color"
                     app:cornerRadius="8dp"
                     tools:ignore="RtlSymmetry" />
 
-
-
             </LinearLayout>
-
-
 
         </RelativeLayout>
 

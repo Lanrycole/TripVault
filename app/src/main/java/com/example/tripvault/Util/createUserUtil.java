@@ -1,8 +1,8 @@
 package com.example.tripvault.Util;
 
-public class Util {
+public class createUserUtil {
 	public static final int DATABASE_VERSION =1;
-	public static final String  DATABASE_NAME = "Contact_db";
+	public static final String  DATABASE_NAME = "User_db";
 	public static final String TABLE_NAME ="Registration";
 
 
